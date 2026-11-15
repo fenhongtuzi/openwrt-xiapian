@@ -93,6 +93,10 @@ git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall package
 git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2 package/luci-app-passwall2
 git clone --depth=1 https://github.com/vernesong/OpenClash package/luci-app-openclash
 
+# 删除不兼容的firewall4 fullcone补丁，解决编译失败
+rm -f package/network/config/firewall4/patches/001-firewall4-add-support-for-fullcone-nat.patch
+
+
 git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
 git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
 # 清理 PassWall 的 chnlist 规则文件
