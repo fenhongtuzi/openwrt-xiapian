@@ -161,8 +161,8 @@ jobs:
       uses: ncipollo/release-action@main
       with:
         name: ${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
-        allowUpdates: true
-        tag: ${{ env.FIRMWARE_TAG }}
+        allowUpdates: false
+        tag: ${{ env.FIRMWARE_TAG }}-${{ github.run_id }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
